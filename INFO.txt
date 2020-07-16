@@ -1,0 +1,4 @@
+$ node --version
+$ npm --version
+$ node server.js
+$ npm install express
