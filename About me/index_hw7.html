@@ -12,11 +12,14 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+			integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+			crossorigin="anonymous"></script>
 	<!-- my stylesheets -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<script src="js/script.js"></script>
+<body onload="setResume()">
 	<!-- header -->
 	<header>
 		<a name="top"></a>
@@ -48,10 +51,7 @@
 				</div>
 				<!-- main text -->
 				<div class="row">
-					<div class="col-6">
-						
-						<p>&nbsp;&nbsp;&nbsp;&nbsp;Привет. Я Шагалиев Динар, студент Высшей Школы ИТИС - лучшего казанского института. Начал свое обучение в сентябре 2019 года, и вот уже как год набираю необходимые навыки в этом учебном заведении. До этого заканчивал МБОО Лицей №2 города Буинска, оттуда и родом. На данный момент я учусь на программиста. Считаю данную профессию перспективной и востребованной. Изучаю такие языки как Java, CSS, HTML. Вникаю в верстку сайтов, предпочитаю верску без использования технологий Bootstrap.
-						</p>
+					<div class="col-6" id="info">
 					</div>
 					<div class="col-6 image">
 						<img src="img/me.jpg" alt="me image">
@@ -73,16 +73,8 @@
 							<h2 class="article">Facts</h2>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-4">
-							<p>На данный момент учусь играть на гитаре</p>
-						</div>
-						<div class="col-4">
-							<p>Люблю пить малиновый чаек</p>
-						</div>
-						<div class="col-4">
-							<p>Нравится чистое программирование</p>
-						</div>
+					<div class="row" id="facts">
+						<!--тут должны быть факты-->
 					</div>
 				</div>
 			</section>
@@ -93,29 +85,8 @@
 							<h2 class="article">My skills</h2>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-6">
-							<ul>
-								<li>Программирую на java</li>
-								<li>Слегка знаю HTML, CSS, SASS</li>
-								<li>Умею работать с базами данных (PostgresSQL)</li>
-								<li>Немного владею Photoshop</li>
-								<li>Могу спать 3 часа в день</li>
-							</ul>
-						</div>
-						<div class="col-6">
-							<ul>
-								<li>Не плохо готовлю</li>
-								<li>Могу подтянуться 15 раз и отжаться 50</li>
-								<li>Имеются такие качества как</li>
-								<ul>
-									<li>Целеустремленность</li>
-									<li>Выдержка</li>
-									<li>Ответственность</li>
-									<li>Общительность</li>
-								</ul>
-							</ul>
-						</div>
+					<div id="skills" class="row">
+						<!--my skills-->
 					</div>
 				</div>
 			</article>
@@ -136,10 +107,10 @@
 			<div class="row">
 				<div class="col-12 contacts">
 					<a name="contacts"></a>
-					<p>Телефон: +7 (987) 478-13-74</p>
-					<p>Почта: <a target="blank" href="https://mail.google.com/">dinar.shagaliev2002@gmail.com</a></p>
-					<p>Github: <a href="https://github.com/Dinozavvvr">Dinozavvvr</a></p>
-					<p>Телеграм: @lllakilOhNil</p>
+					<p>Телефон: <span id="phone-num"><!--telephone--></span></p>
+					<p>Почта: <span id="email"><!--email--></span></p>
+					<p>Github: <span id="github"><!--github--></span></p>
+					<p>Телеграм: <span id="telegram"><!--telegram--></span></p>
 				</div>
 			</div>
 		</div>
