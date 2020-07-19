@@ -86,3 +86,56 @@ function getList(list) {
     html += "</ul>\n";
     return html;
 }
+
+function getRequests() {
+    $.getJSON("/requests", function (response) {
+        let html = "";
+        for (let i = 0; i < response.length; i++) {
+            html += "<div class='container request'>" +
+                "<div class='row'>" +
+                "<div class='col-12 request-item'>"
+            html += "<p><span>full name: </span>" + response[i].fio + "</p>"
+            html += "<p><span>EMAIL: </span>" + response[i].email + "</p>"
+            html += "</div></div></div>"
+        }
+        $("#req").append(html);
+    });
+}
+
+function sendRequest(form) {
+    let fio = form.fio.value;
+    let email = form.email.value;
+    if(valid(fio, email)) {
+        $.post("/send",
+            {
+                fio: fio,
+                email: email
+            },
+            function () {
+                alert("Thanks! Your request sanded");
+            },
+        );
+    }
+}
+
+function valid(fi, em) {
+    return fio(fi) & email(em);
+}
+
+function fio(fi) {
+    if(fi.length === 0) {
+        alert("You input incorrect fio");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function email(em) {
+    if(em.length === 0) {
+        alert("You input incorrect email");
+        return false;
+    } else {
+        return true;
+    }
+}

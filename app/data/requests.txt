@@ -1,0 +1,4 @@
+{"fio":"Шагалиев Динар Робертович","email":"dinar.shagaliev2002@gmail.com"}
+{"fio":"Шеверда Антон Игоревич ","email":"dinar.shagaliev2002@gmail.com"}
+{"fio":"Иванов Иван Иванович","email":"DRShagaliev@stud.kpfu.ru"}
+{"fio":"Ширманов Никитка Олегович","email":"dinar.shagaliev@mail.ru"}

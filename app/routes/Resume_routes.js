@@ -1,6 +1,9 @@
+bodyParser = require('body-parser').json();
+const fs = require("fs");
+
 module.exports = function (app) {
     app.get('/index_hw7', (request, response) => {
-        var result = {
+        let result = {
             "description": "&nbsp;&nbsp;&nbsp;&nbsp;Привет. Я Шагалиев Динар, мне 18 и я студент Высшей Школы ИТИС -" +
                 " лучшего казанского института. Начал свое обучение в сентябре 2019 года, и вот уже как год набираю" +
                 " необходимые навыки в этом учебном заведении. До этого заканчивал МБОО Лицей №2 города Буинска, оттуда и родом." +
@@ -44,7 +47,30 @@ module.exports = function (app) {
                     ]
                 }
             ]
-        }
+        };
+        response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify(result));
     });
+
+    app.get('/requests', (request, response) => {
+
+        let array = fs.readFileSync('app\\data\\requests.txt').toString().trim().split("\n");
+
+        for(let i = 0; i < array.length; i++) {
+            array[i] = JSON.parse(array[i]);
+        }
+
+        response.setHeader('Content-Type', 'application/json');
+        response.send(array);
+    });
+
+    app.post('/send', bodyParser, (request, response) => {
+        let body = request.body;
+        let user = request.body;
+        fs.appendFileSync('app\\data\\requests.txt', JSON.stringify({fio: user.fio, email: user.email }) + "\n");
+        response.setHeader('Content-Type', 'application/json');
+        response.send(JSON.stringify(body));
+    });
+
+
 };

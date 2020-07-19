@@ -1,0 +1,15 @@
+GET http://localhost:200/index_hw7
+
+###
+
+POST http://localhost:200/send
+Content-Type: application/json
+
+{
+  "fio" : "Shagaliev Dinar Robertovich",
+  "email" : "Email"
+}
+
+###
+
+GET http://localhost:200/requests

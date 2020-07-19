@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <script src="js/script.js"></script>
-<body>
+<body onload="getRequests()">
 <!-- header -->
 <header>
     <a name="top"></a>
@@ -36,40 +36,22 @@
             </div>
             <nav class="main-nav d-flex main-nav">
                 <ul>
-                    <li><a href="index_hw7.html">back</a></li>
+                    <li><a href="index_hw7.html">main</a></li>
+                    <li><a href="send.html">back</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 </header>
-<!-- form -->
-<div class="form">
-    <form onsubmit="sendRequest(this)" action="#" method="get" id="sendForm">
-        <div class="container form">
-            <div class="row">
-                <div class="col-12">
-                    <label for="fio-input">Full name</label>
-                    <br>
-                    <input class="window" id="fio-input" type="text"
-                           placeholder="Shagagliev Dinar Robertovich" name="fio" maxlength="75">
-                    <br>
-                    <label for="email-input">Email</label>
-                    <br>
-                    <input class="window" id="email-input" type="text"
-                           placeholder="dinar.shagaliev@gmail.com" name="email" maxlength="35">
-                    <br>
-                    <input id="button" class="sub" type="submit" value="Send request">
-                </div>
-            </div>
+<!-- info -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="article">Requests</h2>
         </div>
-        <div class="container requests">
-            <div class="row">
-                <div class="col-12">
-                    <div class="button req"><a href="requests.html">show requests</a></div>
-                </div>
-            </div>
-        </div>
-    </form>
+    </div>
+</div>
+<div id="req" class="requests">
 </div>
 </body>
 </html>
